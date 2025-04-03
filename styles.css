@@ -7,10 +7,10 @@
     letter-spacing: 2px;
 }
 
-
+/* increased the font size */
 h1 {
     text-align: center;
-    font-size: 15px;
+    font-size: 30px; 
     font-family: sans-serif;
 }
 
@@ -21,20 +21,21 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* increased size of button */
 button {
-    width: 120px;
+    width: 200px;
     background: lightgrey;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
-    padding: 10px 10px;
-    margin-left: 10px;
+    padding: 30px 15px;
+    margin-left: 100px;
     margin-top: 10px;
     text-transform: uppercase;
     color: white;
-    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
@@ -44,13 +45,14 @@ button:hover {
     transform: scale(1.2)
 }
 
+/* increased the gap between the two containers */
 .container {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 #maps {
-    width: 500px;
+    width: 700px;
     height: 500px;
     position: relative;
     overflow: hidden;

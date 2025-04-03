@@ -1,3 +1,4 @@
+// Preload images to avoid delay when switching
 function preloadImages() {
     const imageSources = [
         "images/MN.png",
@@ -18,44 +19,55 @@ function preloadImages() {
     return preloadedImages;
 }
 
-
+// Inject and toggle opacity of borough maps
 function injectImage(borough) {
+    const container = document.getElementById("maps");
+
+    // Clear the current map
+    container.innerHTML = '';
+
+    // Create new image element for selected borough
     const img = document.createElement("img");
-
-
+    img.id = borough + "Map";  // Add unique id for each map
+    img.alt = borough + " Map";
+    
+    // Set the source based on the borough clicked
     switch (borough) {
         case 'manhattan':
             img.src = "images/MN.png";
-            img.alt = "Manhattan Map";
             break;
         case 'brooklyn':
             img.src = "images/BK.png";
-            img.alt = "Brooklyn Map";
             break;
         case 'queens':
             img.src = "images/QN.png";
-            img.alt = "Queens Map";
             break;
         case 'thebronx':
             img.src = "images/BX.png";
-            img.alt = "The Bronx Map";
             break;
         case 'statenisland':
             img.src = "images/SI.png";
-            img.alt = "Staten Island Map";
             break;
-
         default:
-            img.src = "images/NYC.png";
-            img.alt = "NYC Map";
+            img.src = "images/NYC.png";  // Default map
     }
 
-    const container = document.getElementById("maps");
-    container.innerHTML = '';
+    // Append the image to the container
     container.appendChild(img);
+
+    // Set opacity of other maps to 0, and the selected map to 1 (fully visible)
+    const maps = container.querySelectorAll('img');
+    maps.forEach(image => {
+        if (image.id !== borough + "Map") {
+            image.style.opacity = 0;  // Hide other maps
+        } else {
+            image.style.opacity = 1;  // Show the selected map
+        }
+    });
 }
 
+// Initialize default map on load
 window.onload = function () {
     preloadImages();
-    injectImage('default');
-}
+    injectImage('default');  // Show the default map when the page loads
+};

@@ -14,19 +14,27 @@
         NYC Boroughs
     </div>
 
+    <!-- changed the header to make it more engaging -->
     <h1>
         Select a Borough to Explore
     </h1>
 
+
+    <!--container to hold buttons-->
     <div class="container">
         <div class="button-container">
-            <button id="Manhattan" onmouseover="injectImage('manhattan')"onmouseout="injectImage('default')">Manhattan</button>
-            <button id="Brooklyn" onmouseover="injectImage('brooklyn')" onmouseout="injectImage('default')">Brooklyn</button>
+            <button id="Manhattan" onmouseover="injectImage('manhattan')"
+                onmouseout="injectImage('default')">Manhattan</button> <!--mouseout goes back to defult map-->
+            <button id="Brooklyn" onmouseover="injectImage('brooklyn')"
+                onmouseout="injectImage('default')">Brooklyn</button>
             <button id="Queens" onmouseover="injectImage('queens')" onmouseout="injectImage('default')">Queens</button>
-            <button id="Thebronx" onmouseover="injectImage('thebronx')" onmouseout="injectImage('default')">The Bronx</button>
-            <button id="StatenIsland" onmouseover="injectImage('statenisland')"onmouseout="injectImage('default')">Staten Island</button>
+            <button id="Thebronx" onmouseover="injectImage('thebronx')" onmouseout="injectImage('default')">The
+                Bronx</button>
+            <button id="StatenIsland" onmouseover="injectImage('statenisland')"
+                onmouseout="injectImage('default')">Staten Island</button>
         </div>
 
+   
         <div id="maps"></div>
     </div>
 
