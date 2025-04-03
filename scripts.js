@@ -7,10 +7,15 @@ function preloadImages() {
         "images/SI.png",
         "images/NYC.png"
     ];
+
+    const preloadedImages = {};
     imageSources.forEach(src => {
         const img = new Image();
         img.src = src;
+        preloadedImages[src] = img;  // Map the source URL to the image element
     });
+
+    return preloadedImages;
 }
 
 
